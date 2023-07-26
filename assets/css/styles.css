@@ -1,0 +1,91 @@
+/* styles.css (ubicado en assets/css) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: 32404a; /* Negro */
+  color: #dae3e5; /* Gris claro */
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #dae3e5; /* Gris claro */
+}
+
+form {
+  background-color: #1dd3b0; /* Verde claro */
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: space-between;
+  max-width: 800px; /* Ajustar el ancho máximo deseado para el formulario */
+  margin: 0 auto;
+}
+
+.form-group {
+  margin: 0 5px;
+  margin-bottom: 15px; /* Agregar espacio entre cada grupo de campos */
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #fff; /* Color blanco para el texto de las etiquetas */
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #1111; /* Color de borde */
+  border-radius: 4px;
+}
+
+button {
+  background-color: #006494;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #003554; /* Color de fondo al pasar el cursor */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+ul li strong {
+  display: block;
+  font-weight: bold;
+}
+
+.table-responsive {
+  margin-top: 20px; /* Agregar margen superior para separar el formulario de la tabla */
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  background-color: #1dd3b0;
+  color: #fff;
+}
+
+/* Estilos para el título */
+.vehicle-h1 {
+  text-align: center;
+  margin-top: 30px; /* Agregar margen superior para separar el título del formulario y la tabla */
+  color: black;
+}
+
+/* Estilos para el hover del enlace del navbar */
+.navbar-nav .nav-link:hover {
+  color: #32404a !important; 
+  transition: color 0.3s ease-in-out !important;
+}
+

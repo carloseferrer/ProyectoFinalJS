@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taller John & Doe Mantenimiento</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #32404a">
+    <nav class="navbar navbar-expand-lg" style="background-color: #1dd3b0">
+      <span class="navbar-brand mb-0 h1" style="color: white" href="#"
+        >Taller John & Doe</span
+      >
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/" style="color: white">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datos" style="color: white"
+              >Vehiculos y Mantenimiento</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Formulario para agregar datos de mantenimiento de vehículos -->
+    <div style="margin: 20px">
+      <h2 style="text-align: center; color: aliceblue; margin: 20px 0 20px 0">
+        Formulario de Datos de Mantenimiento de Vehículos
+      </h2>
+      <form id="datosForm">
+        <div class="form-group">
+          <label for="clientesSelect">Cliente:</label>
+          <select id="clientesSelect" name="clienteId" required>
+            <option value="" disabled selected>Seleccione un cliente...</option>
+            <!-- Aquí se cargarán las opciones de clientes -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cedulaCliente">Cédula del Cliente:</label>
+          <input type="text" id="cedulaCliente" name="cedulaCliente" readonly required />
+        </div>
+        <div class="form-group">
+          <label for="marca">Marca del Vehículo:</label>
+          <input
+            type="text"
+            id="marca"
+            name="marca"
+            required
+            placeholder="Ej: Honda Accord 2007"
+          />
+        </div>
+        <div class="form-group">
+          <label for="placa">Placa del Vehículo:</label>
+          <input
+            type="text"
+            id="placa"
+            name="placa"
+            minlength="7"
+            maxlength="7"
+            required
+            placeholder="Ej: AB123CD"
+          />
+        </div>
+        <div class="form-group">
+          <label for="tipoMantenimiento">Tipo de Mantenimiento:</label>
+          <select id="tipoMantenimiento" name="tipoMantenimiento" required>
+            <option value="" disabled selected>Seleccione el tipo de Mantenimiento...</option>
+            <option value="Preventivo">Preventivo</option>
+            <option value="Correctivo">Correctivo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nombreMecanico">Nombre del Mecánico:</label>
+          <select name="nombreMecanico" id="nombreMecanico" required>
+            <option value="" disabled selected>Seleccione el Mecanico...</option>
+            <option value="John Doe">John Doe</option>
+            <option value="Doe John">Doe John</option>
+          </select>
+        </div>
+        <!-- <div class="form-group">
+        <label for="nombreMecanico">Nombre del Mecánico:</label>
+        <input type="text" id="nombreMecanico" name="nombreMecanico" required />
+      </div> -->
+        <button type="submit">Agregar Datos de Mantenimiento</button>
+      </form>
+    </div>
+
+    <div
+      id="errorMessagePlaca"
+      class="alert alert-danger d-none"
+      style="text-align: center; margin: 0 auto; max-width: 80%"
+      role="alert"
+    ></div>
+
+    <!-- Tabla para mostrar los datos de mantenimiento -->
+    <div style="margin: 20px">
+      <h2 style="text-align: center; color: aliceblue; margin-bottom: 20px">
+        Datos de Mantenimiento
+      </h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Cedula Cliente</th>
+            <th>Marca</th>
+            <th>Placa</th>
+            <th>Tipo de Mantenimiento</th>
+            <th>Nombre del Mecánico</th>
+            <th style="text-align: center;">Acción</th>
+          </tr>
+        </thead>
+        <tbody id="datosTableBody" style="background-color: aliceblue">
+          <!-- Aquí se cargarán los datos de mantenimiento -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>

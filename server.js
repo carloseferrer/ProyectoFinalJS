@@ -1,13 +1,14 @@
 // server.js
 const express = require("express");
+require('dotenv').config()
+console.log(process.env)
 const { MongoClient, ObjectId } = require("mongodb");
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
 const path = require("path");
 
-const dbUri =
-  "mongodb+srv://carlosferrerdev:Wr0liCSABFjvfEQ7@tallerjohndoe.agbgh8d.mongodb.net/mi_crud_db?retryWrites=true&w=majority";
+const URL_CONNECT = process.env.URL_CONNECT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,7 +18,7 @@ let db; // Variable para almacenar la conexión a la base de datos
 // Conexión a la base de datos
 async function connectDB() {
   try {
-    const client = await MongoClient.connect(dbUri, {
+    const client = await MongoClient.connect(URL_CONNECT, {
       useUnifiedTopology: true,
     });
     db = client.db("mi_crud_db"); // Nombre de tu base de datos "mi_crud_db"
@@ -261,8 +262,8 @@ app.get("/getDatos", async function (req, res) {
 // Iniciar la conexión a la base de datos y luego iniciar el servidor
 connectDB()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Aplicación alojada en http://localhost:${port}`);
+    app.listen(PORT, () => {
+      console.log(`Aplicación alojada en http://localhost:${PORT}`);
     });
   })
   .catch(console.dir);

@@ -1,4 +1,4 @@
-# Proyecto #Final JavaScript
+# Proyecto Final JavaScript
 ### Nombre: Carlos Ferrer
 ### Cedula: 28.326.446
 ### Sección: N1113
